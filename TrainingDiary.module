@@ -1,0 +1,56 @@
+<?php
+
+// The Training Diary keeps track of your training.
+//
+// Enables the user input information about weight and training 
+// and displays the input in nice graphs.
+
+
+// This function defines the URL to the page created etc.
+// See http&#58;//api.drupal.org/api/function/hook_menu/6
+
+function TrainingDiary_menu() {
+  $items = array();
+  $items['TrainingDiary/form'] = array(
+    'title' => t('My form'),
+    'page callback' => 'TrainingDiary_form',
+    'access arguments' => array('access content'),
+    'description' => t('My form'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['TrainingDiary/form1'] = array(
+    'title' => t('Min form2'),
+    'page callback' => 'TrainingDiary_form',
+    'access arguments' => array('access content'),
+    'description' => t('En form test'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+// This function gets called in the browser address bar for: 
+//"http://yourhost/TrainingDiary/form" or 
+//"http://yourhost/?q=TrainingDiary/form". It will generate// a page with //this form on it.
+
+function TrainingDiary_form() {
+
+  // This form calls the form builder function via the
+  // drupal_get_form() function which takes the name of this form builder
+  // function as an argument. It returns the results to display the form. 
+return drupal_get_form('TrainingDiary_my_form');
+
+}
+
+// This function is called the "form builder". It builds the form.
+// Notice, it takes one argument, the $form_state
+function TrainingDiary_my_form($form_state) {
+    
+    // This is the first form element. It's a textfield with a label, "Name"
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name'),
+  );
+  return $form;
+}
+
+
