@@ -15,9 +15,10 @@ CREATE TABLE `TrainingDiary`.`weight` (
 INDEX (aid),
 FOREIGN KEY (`aid`) REFERENCES  `TrainingDiary`.`athlete` (`aid`) ON DELETE RESTRICT ON UPDATE CASCADE,
 `wdate` DATE NOT NULL COMMENT 'Date',
-`weight` DECIMAL (3,1) NOT NULL COMMENT 'Weight/kg',
-`bodyfatpct` DECIMAL (2,1) NULL COMMENT 'Bodyfat/pct',
-`bodyfatkg` DECIMAL (3,1) NULL COMMENT 'Bodyfat/kg'
+`weight` DECIMAL (4,1) NOT NULL COMMENT 'Weight/kg',
+`bodyfatpct` DECIMAL (3,1) NULL COMMENT 'Bodyfat/pct',
+`bodyfatkg` DECIMAL (4,1) NULL COMMENT 'Bodyfat/kg',
+`notfatkg` DECIMAL (4,1) NULL COMMENT 'Notfat/kg'
 ) ENGINE = InnoDB ;
 
 
@@ -28,9 +29,19 @@ VALUES (
 NULL, 'Test testesen', 'test@testmail.com', NULL);
 
 INSERT INTO `trainingdiary`.`weight` (
-`wid` ,`aid` ,`wdate` ,`weight` ,`bodyfatpct` ,`bodyfatkg` )
+`wid` ,`aid` ,`wdate` ,`weight` ,`bodyfatpct` ,`bodyfatkg`,`notfatkg` )
 VALUES (
-NULL , '1', '2009-11-18', '75.9', '12', '9.1');
+NULL , '1', '2009-11-18', '75.9', '12', '9.1','66.8');
+
+INSERT INTO `trainingdiary`.`weight` (
+`wid` ,`aid` ,`wdate` ,`weight` ,`bodyfatpct` ,`bodyfatkg`,`notfatkg` )
+VALUES (
+NULL , '1', '2009-11-21', '102.4', '11', '11.3','91.1');
+
+INSERT INTO `trainingdiary`.`weight` (
+`wid` ,`aid` ,`wdate` ,`weight` ,`bodyfatpct` ,`bodyfatkg`,`notfatkg` )
+VALUES (
+NULL , '1', '2009-11-15', '77', '12.5', '9.6','67.4');
 
 */
 
