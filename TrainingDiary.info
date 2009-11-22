@@ -1,0 +1,7 @@
+; $Id$
+name = Training Diary
+description = The Training Diary gives your training overview
+package = klb
+core = 6.x
+version = "0.1"
+
