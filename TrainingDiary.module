@@ -25,12 +25,33 @@ function TrainingDiary_menu() {
     'description' => t('En form test'),
     'type' => MENU_CALLBACK,
   );
+  /* $items['TrainingDiary/showwdata'] = array(
+    'title' => 'Vægtdata',
+    'page callback' => 'page_TrainingDiary_showwdata',
+    'access arguments' => array('access content'),
+    'description' => t('Her vises vægtdata')
+  ); */
+  
+  $items['TrainingDiary/showwdata'] = array(
+    'title' => 'Vægtdata',
+    'page callback' => 'page_TD_showweight',
+    'access arguments' => array('access content'),
+  );
+
   return $items;
 }
 
 // This function gets called in the browser address bar for: 
 //"http://yourhost/TrainingDiary/form" or 
-//"http://yourhost/?q=TrainingDiary/form". It will generate// a page with //this form on it.
+//"http://yourhost/?q=TrainingDiary/form". It will generate a page with this form on it.
+
+function page_TrainingDiary_showwdata() {
+  return t('Vægtdata show');
+}
+
+function page_TD_showweight() {
+  return t('Her vises vægtdata');
+}
 
 function TrainingDiary_form() {
 
