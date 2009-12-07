@@ -32,8 +32,10 @@ function TrainingDiary_menu() {
     'description' => t('Her vises vægtdata')
   ); */
   
+  // http://drupal.org/node/143539 //
+  
   $items['TrainingDiary/showwdata'] = array(
-    'title' => 'Vægtdata',
+    'title' => t('V&aelig;gtdata'),
     'page callback' => 'page_TD_showweight',
     'access arguments' => array('access content'),
   );
@@ -44,13 +46,13 @@ function TrainingDiary_menu() {
 // This function gets called in the browser address bar for: 
 //"http://yourhost/TrainingDiary/form" or 
 //"http://yourhost/?q=TrainingDiary/form". It will generate a page with this form on it.
-
+/*
 function page_TrainingDiary_showwdata() {
-  return t('Vægtdata show');
+  return t('V&#230;gtdata show');
 }
-
+*/
 function page_TD_showweight() {
-  return t('Her vises vægtdata');
+  return t('Her vises v&#230;gtdata');
 }
 
 function TrainingDiary_form() {
