@@ -1,0 +1,26 @@
+<?php
+function TrainingDiary_schema() {
+  $schema['tdweight'] = array(
+     'description' => 'Table for storing athletes weight data',
+     'fields' => array(
+       'wid' => array('description' => 'WeightID', 'type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+     ),
+    'indexes' => array(
+    ), 
+    'unique keys' => array(
+    ),
+    'primary key' => array('wid')
+  );
+  return $schema;
+}
+
+function TrainingDiary_install() {
+  // Create my tables.
+  drupal_install_schema('TrainingDiary');
+}
+
+function TrainingDiary_uninstall() {
+  // Drop my tables.
+  drupal_uninstall_schema('TrainingDiary');
+}
+?>
